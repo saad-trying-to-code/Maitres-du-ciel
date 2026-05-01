@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>MAÎTRES DU CIEL | Combat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding-top: 80px;">
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">        
+            <a class="navbar-brand" href="index.html"><i class="fas fa-fighter-jet"></i> ARCHIVE DE CHASSE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="histoire.html">Histoire</a></li>
+                    <li class="nav-item"><a class="nav-link" href="technique.html">Technique</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="combat.html">Combat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="recrutement.html">Recrutement</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-danger text-white text-center py-2 fw-bold" style="letter-spacing: 3px;">
+        <i class="fas fa-exclamation-triangle"></i> MODE COMBAT ACTIVÉ - SYSTÈMES EN LIGNE <i class="fas fa-exclamation-triangle"></i>
+    </div>
+
+    <div class="container py-5 text-center">
+        <h1 class="mb-5 border-bottom border-success pb-3 d-inline-block">INTERFACE TACTIQUE</h1>
+
+        <div class="row align-items-center mt-4 mb-5">
+            <div class="col-md-6 mb-5">
+                <div class="card bg-dark border-secondary p-4 shadow-lg">
+                    <h3 class="mb-1 text-success">RADAR AESA</h3>
+                    <p class="text-muted small mb-4">Balayage électronique de secteur à 360°</p>
+                    
+                    <div class="radar-css mx-auto">
+                        <div class="radar-sweep"></div>
+                        <div class="radar-blip"></div>
+                    </div>
+                    <div class="mt-4 text-danger fw-bold">1 CIBLE(S) DÉTECTÉE(S)</div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-5">
+                <div class="card bg-dark border-secondary p-4 shadow-lg h-100">
+                    <h3 class="text-success mb-3">SURFACE ÉQUIVALENTE RADAR (RCS)</h3>
+                    <p class="text-start mb-4">Passez le curseur sur les objets pour simuler un verrouillage. Plus la cible est petite, plus elle est furtive.</p>
+                    
+                    <div class="d-flex justify-content-center align-items-end pb-3 mt-auto" style="height: 180px; border-bottom: 2px solid #444;">
+                        <div class="rcs-circle" style="width: 120px; height: 120px;" title="Bombardier lourd">B-52<br>(100m²)</div>
+                        <div class="rcs-circle" style="width: 70px; height: 70px;" title="Chasseur standard">F-16<br>(1.2m²)</div>
+                        <div class="rcs-circle" style="width: 25px; height: 25px; font-size: 10px;" title="Furtivité max">F-22</div>
+                    </div>
+                    
+                    <p class="mt-4 text-start text-muted small"><i class="fas fa-info-circle text-success"></i> Sur un écran ennemi, le F-22 a l'empreinte radar d'une bille en métal.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-5 mb-4 border-bottom border-secondary pb-3">MANUEL DES SYSTÈMES DE BORD</h2>
+        <p class="text-muted mb-4"><i class="fas fa-hand-pointer"></i> Cliquez sur un système du panneau de gauche pour afficher ses détails opérationnels.</p>
+
+        <div class="row text-start">
+            <div class="col-md-4 mb-4">
+                <div class="list-group shadow-lg">
+                    <button type="button" class="list-group-item list-group-item-action bg-dark text-success border-secondary fw-bold sys-btn" onclick="afficherInfosCombat('hud')">
+                        <i class="fas fa-vr-cardboard"></i> HUD & Viseur de Casque
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action bg-dark text-success border-secondary fw-bold sys-btn" onclick="afficherInfosCombat('radar')">
+                        <i class="fas fa-satellite-dish"></i> Radar AESA
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action bg-dark text-success border-secondary fw-bold sys-btn" onclick="afficherInfosCombat('cm')">
+                        <i class="fas fa-shield-alt"></i> Contre-Mesures (Flares/Chaff)
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action bg-dark text-success border-secondary fw-bold sys-btn" onclick="afficherInfosCombat('rcs')">
+                        <i class="fas fa-eye-slash"></i> Signification du RCS
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action bg-dark text-success border-secondary fw-bold sys-btn" onclick="afficherInfosCombat('armes')">
+                        <i class="fas fa-crosshairs"></i> Fox 1, 2 et 3 (Missiles)
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card bg-dark border-success shadow-lg h-100 p-4" style="border-width: 2px;">
+                    <div class="text-center" id="combat-icone-container">
+                        <i id="combat-icone" class="fas fa-microchip fa-4x text-secondary mb-3"></i>
+                    </div>
+                    <h3 id="combat-titre" class="text-white text-center mb-4">EN ATTENTE DE SÉLECTION...</h3>
+                    <div id="combat-desc" class="text-light" style="font-size: 1.1rem; line-height: 1.6;">
+                        <p class="text-center text-muted">Veuillez sélectionner un système dans le menu tactique pour charger ses spécifications techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
