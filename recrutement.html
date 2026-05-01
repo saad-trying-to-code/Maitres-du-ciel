@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>MAÎTRES DU CIEL | Recrutement</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="padding-top: 80px;">
+
+    <!-- NAVBAR BOOTSTRAP -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-fighter-jet"></i> ARCHIVE DE CHASSE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="histoire.html">Histoire</a></li>
+                    <li class="nav-item"><a class="nav-link" href="technique.html">Technique</a></li>
+                    <li class="nav-item"><a class="nav-link" href="combat.html">Combat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="recrutement.html">Recrutement</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4 border-bottom border-success pb-3 d-inline-block">PROGRAMME DE RECRUTEMENT</h1>
+        <p class="text-center text-muted mb-5">L'élite de l'aviation vous attend. Soumettez votre dossier de candidature au Commandement.</p>
+        
+        <div class="row align-items-center">
+            
+            <!-- Image d'illustration -->
+            <div class="col-md-5 mb-5 mb-md-0">
+                <img src="images/fighter-pilot.png" class="img-fluid border border-secondary shadow-lg" alt="Pilote de chasse">
+            </div>
+
+            <!-- Formulaire HTML5 conforme au cours FSSM -->
+            <div class="col-md-7">
+                
+                <!-- Zone pour le message d'erreur JS -->
+                <div id="message-erreur" class="alert alert-danger" style="display: none; background-color: var(--blood-red); color: white; border: none;"></div>
+
+                <form name="formRecrutement" action="#" method="POST" onsubmit="return validerRecrutement()">
+                    
+                    <fieldset class="border border-secondary p-4 bg-dark shadow-lg">
+                        <legend class="text-success fw-bold w-auto px-2">DOSSIER PILOTE</legend>
+                        
+                        <!-- Civilité (Boutons Radio) -->
+                        <div class="mb-3">
+                            <label class="form-label">Civilité :</label><br>
+                            <input type="radio" name="civilite" id="civM" value="M" class="radio-military" checked>
+                            <label for="civM" class="me-3">M.</label>
+                            
+                            <input type="radio" name="civilite" id="civMme" value="Mme" class="radio-military">
+                            <label for="civMme" class="me-3">Mme</label>
+                        </div>
+
+                        <!-- Nom et Prénom (Champs Text) -->
+                        <div class="mb-3">
+                            <label for="nom" class="form-label">Nom et Prénom (Obligatoire)</label>
+                            <input type="text" id="nom" name="nom" class="form-control form-control-military" placeholder="Ex: MAVERICK">
+                        </div>
+
+                        <!-- Email (Champ Text) -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Identifiant de communication (Email)</label>
+                            <input type="text" id="email" name="email" class="form-control form-control-military" placeholder="pilote@airforce.com">
+                        </div>
+
+                        <!-- Spécialité (Liste de sélection) -->
+                        <div class="mb-3">
+                            <label for="specialite" class="form-label">Spécialité visée</label>
+                            <select id="specialite" name="specialite" class="form-control form-control-military">
+                                <option value="interception">Pilote d'Interception (Air-Air)</option>
+                                <option value="bombardement">Pilote de Frappe (Air-Sol)</option>
+                                <option value="reconnaissance">Reconnaissance Tactique</option>
+                                <option value="drone">Opérateur Drone de combat</option>
+                            </select>
+                        </div>
+
+                        <!-- Motivations (Textarea) -->
+                        <div class="mb-4">
+                            <label for="motivation" class="form-label">Rapport de motivation</label>
+                            <textarea id="motivation" name="motivation" rows="4" class="form-control form-control-military" placeholder="Expliquez vos motivations..."></textarea>
+                        </div>
+
+                        <!-- Boutons Submit et Reset -->
+                        <div class="d-flex justify-content-between">
+                            <button type="reset" class="btn btn-outline-secondary rounded-0 px-4">
+                                <i class="fas fa-undo"></i> PURGER
+                            </button>
+                            <button type="submit" class="btn btn-success rounded-0 px-4 fw-bold" style="background-color: var(--neon-green); color: black; border: none;">
+                                <i class="fas fa-paper-plane"></i> TRANSMETTRE LE DOSSIER
+                            </button>
+                        </div>
+
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Bootstrap et JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
