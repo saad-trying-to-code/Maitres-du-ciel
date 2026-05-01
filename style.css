@@ -1,0 +1,291 @@
+/* =========================================
+   VARIABLES ET DESIGN DE BASE
+========================================= */
+:root {
+    --bg-dark: #080808;
+    --neon-green: #39ff14;
+    --blood-red: #8b0000;
+    --text-main: #e0e0e0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Share Tech Mono', monospace;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Black Han Sans', sans-serif;
+    color: var(--neon-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   BARRE DE NAVIGATION
+========================================= */
+.navbar {
+    background: rgba(8, 8, 8, 0.95);
+    border-bottom: 1px solid var(--neon-green);
+}
+.navbar-brand {
+    color: var(--neon-green) !important;
+    font-size: 1.5rem;
+}
+.nav-link {
+    color: white !important;
+    transition: 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--neon-green) !important;
+    border-bottom: 2px solid var(--blood-red);
+}
+
+/* =========================================
+   PAGE ACCUEIL : HERO & CARTES
+========================================= */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle, #1a1a1a 0%, #080808 100%);
+}
+
+.btn-military {
+    display: inline-block;
+    padding: 15px 30px;
+    background: transparent;
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    text-decoration: none;
+    font-family: 'Black Han Sans', sans-serif;
+    transition: 0.3s;
+}
+.btn-military:hover {
+    background: var(--neon-green);
+    color: black;
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.feature-card {
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid #333;
+    padding: 30px;
+    text-align: center;
+    height: 100%;
+    transition: 0.4s;
+}
+.feature-card:hover {
+    border-color: var(--neon-green);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(57, 255, 20, 0.1);
+}
+
+/* =========================================
+   PAGE HISTOIRE : DOSSIERS MILITAIRES
+========================================= */
+.timeline-card {
+    background-color: #111;
+    border: 1px solid #333;
+    border-left: 5px solid var(--blood-red);
+    padding: 20px;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(57, 255, 20, 0.2);
+    border-left: 5px solid var(--neon-green);
+}
+.timeline-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease, transform 0.5s ease;
+    border: 1px solid #444;
+}
+.timeline-card:hover .timeline-img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+    border-color: var(--neon-green);
+}
+
+/* =========================================
+   PAGE TECHNIQUE : EFFET SCANNER
+========================================= */
+.blueprint-container {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #004400;
+}
+.scanner-line {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 3px;
+    background: var(--neon-green);
+    box-shadow: 0 0 15px var(--neon-green), 0 0 30px var(--neon-green);
+    animation: scanUpDown 3s infinite linear;
+}
+@keyframes scanUpDown {
+    0% { top: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.list-group-item {
+    transition: background-color 0.3s, padding-left 0.3s;
+}
+.list-group-item:hover {
+    background-color: rgba(57, 255, 20, 0.1) !important;
+    padding-left: 25px;
+    border-left: 3px solid var(--neon-green);
+}
+
+/* =========================================
+   PAGE COMBAT : RADAR ET RCS
+========================================= */
+.radar-css {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid var(--neon-green);
+    position: relative;
+    background: radial-gradient(circle, #003300 0%, #000000 100%);
+    margin: 0 auto;
+    overflow: hidden;
+}
+.radar-sweep {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 2px;
+    background: var(--neon-green);
+    transform-origin: 0 50%;
+    animation: radarRotation 4s linear infinite;
+    box-shadow: 0 0 10px var(--neon-green);
+}
+@keyframes radarRotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.radar-blip {
+    position: absolute;
+    width: 12px; height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    top: 35%; left: 65%;
+    animation: blink 1.5s infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; box-shadow: 0 0 10px red; }
+}
+.rcs-circle {
+    background: #222;
+    border: 2px solid var(--neon-green);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-green);
+    font-weight: bold;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+    cursor: crosshair;
+}
+.rcs-circle:hover {
+    background: var(--blood-red);
+    color: white;
+    border-color: var(--blood-red);
+    transform: scale(1.2);
+    box-shadow: 0 0 20px red;
+}
+
+/* =========================================
+   GALERIE ET MODAL (LIGHTBOX)
+========================================= */
+.gallery-item {
+    margin-bottom: 20px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid #333;
+    transition: transform 0.4s;
+}
+.gallery-item:hover img {
+    transform: scale(1.1);
+    border-color: var(--neon-green);
+}
+.modal-custom {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; top: 0;
+    width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.9);
+    padding-top: 50px;
+}
+.modal-custom img {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border: 2px solid var(--neon-green);
+}
+.close-modal {
+    position: absolute;
+    top: 15px; right: 35px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+/* Effet survol sur les boutons du menu tactique (Page combat) */
+.sys-btn {
+    transition: background-color 0.3s, padding-left 0.3s;
+}
+.sys-btn:hover {
+    background-color: rgba(57, 255, 20, 0.2) !important;
+    color: white !important;
+    padding-left: 25px; /* Petit décalage élégant vers la droite */
+}
+/* =========================================
+   PAGE RECRUTEMENT : FORMULAIRE
+========================================= */
+.form-control-military {
+    background-color: #111;
+    border: 1px solid #444;
+    color: var(--neon-green);
+    border-radius: 0;
+    transition: 0.3s;
+}
+
+.form-control-military:focus {
+    background-color: #000;
+    border-color: var(--neon-green);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+    color: var(--neon-green);
+    outline: none;
+}
+
+/* Style personnalisé pour les boutons radio */
+.radio-military {
+    accent-color: var(--blood-red);
+}
+
+.form-label {
+    color: #aaa;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
