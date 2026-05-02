@@ -30,3 +30,5 @@ Ce projet consiste en la conception et le développement d'un site web statique,
 ## 👨‍💻 Auteur
 Saad Ettousy
 Filière : Informatique Appliquée (IAP) - Semestre 2
+## 🔗 lien vers le site
+https://saad-trying-to-code.github.io/Maitres-du-ciel/
