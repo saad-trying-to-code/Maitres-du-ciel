@@ -65,13 +65,13 @@
                         <!-- Nom et Prénom (Champs Text) -->
                         <div class="mb-3">
                             <label for="nom" class="form-label">Nom et Prénom (Obligatoire)</label>
-                            <input type="text" id="nom" name="nom" class="form-control form-control-military" placeholder="Ex: MAVERICK">
+                            <input type="text" id="nom" name="nom" class="form-control form-control-military" placeholder="Ex: MAVERICK" required pattern="[A-Za-z]+">
                         </div>
 
                         <!-- Email (Champ Text) -->
                         <div class="mb-3">
                             <label for="email" class="form-label">Identifiant de communication (Email)</label>
-                            <input type="text" id="email" name="email" class="form-control form-control-military" placeholder="pilote@airforce.com">
+                            <input type="text" id="email" name="email" class="form-control form-control-military" placeholder="pilote@airforce.com" required>
                         </div>
 
                         <!-- Spécialité (Liste de sélection) -->
